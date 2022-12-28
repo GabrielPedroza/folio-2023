@@ -17,45 +17,45 @@ export default function Experience() {
 
   return (
     <>
-      <Canvas shadows camera={{ position: [0, 12, -22], fov: 30 }}>
-        <color attach="background" args={["lightblue"]} />
-        {/* <Development /> */}
-        <Suspense fallback={null}>
-          <group
-            rotation={[0, Math.PI, 0]}
-            onClick={(e) => (e.stopPropagation(), setOpen(true))}
-          >
-            <PresentationControls
-              enabled={open ? true : false}
-              global
-              config={{ mass: 2, tension: 500 }}
-              snap={{ mass: 3, tension: 1000 }}
-              polar={[-Math.PI / 10, Math.PI / 25]} // vertical limits
-              azimuth={[-Math.PI - 4, Math.PI + 5]} // horizontal limits
+        <Canvas shadows camera={{ position: [0, 12, -22], fov: 30 }}>
+          <color attach="background" args={["lightblue"]} />
+          {/* <Development /> */}
+          <Suspense fallback={null}>
+            <group
+              rotation={[0, Math.PI, 0]}
+              onClick={(e) => (e.stopPropagation(), setOpen(true))}
             >
-              <Model
-                open={open}
-                hinge={props.open.to([0, 1], [1.575, -0.425])}
-                position={[0, 4, 0]}
-              />
-            </PresentationControls>
-          </group>
+              <PresentationControls
+                enabled={open ? true : false}
+                global
+                config={{ mass: 2, tension: 500 }}
+                snap={{ mass: 3, tension: 1000 }}
+                polar={[-Math.PI / 10, Math.PI / 25]} // vertical limits
+                azimuth={[-Math.PI - 4, Math.PI + 5]} // horizontal limits
+              >
+                <Model
+                  open={open}
+                  hinge={props.open.to([0, 1], [1.575, -0.425])}
+                  position={[0, 4, 0]}
+                />
+              </PresentationControls>
+            </group>
             <Cloud position={[-4, -2, 25]} speed={0.4} opacity={1} />
-            <Cloud position={[7, -4, 20]} speed={0.4} opacity={0.5} /> 
+            <Cloud position={[7, -4, 20]} speed={0.4} opacity={0.5} />
             <Cloud position={[-14, -10, 22]} speed={0.3} opacity={0.75} />
             <Cloud position={[14, -4, 24]} speed={0.3} opacity={1} />
             <Cloud position={[25, -30, 34]} speed={0.4} opacity={1} />
-          <Environment preset="city" />
-          <ambientLight intensity={1} />
-        </Suspense>
-        <ContactShadows
-          position={[0, -3.5, 0]}
-          opacity={0.4}
-          scale={20}
-          blur={1.75}
-          far={4.5}
-        />
-      </Canvas>
+            <Environment preset="city" />
+            <ambientLight intensity={1} />
+          </Suspense>
+          <ContactShadows
+            position={[0, -3.5, 0]}
+            opacity={0.4}
+            scale={20}
+            blur={1.75}
+            far={4.5}
+          />
+        </Canvas>
     </>
   );
 }

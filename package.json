@@ -10,6 +10,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.5",
     "@next-auth/prisma-adapter": "^1.0.5",
     "@prisma/client": "^4.5.0",
     "@react-spring/core": "^9.6.1",
@@ -30,6 +31,7 @@
     "r3f-perf": "^6.6.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-icons": "^4.7.1",
     "superjson": "1.9.1",
     "three": "^0.148.0",
     "zod": "^3.18.0"
