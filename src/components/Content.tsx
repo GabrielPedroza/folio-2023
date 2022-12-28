@@ -2,10 +2,10 @@ import { Vector3 } from "three";
 import { useSpring } from "@react-spring/three";
 import { Html } from "@react-three/drei";
 
-export default function Content({ open }) {
-  const springs = useSpring({
-    position: open ? new Vector3(0, 2.66, -0.89) : new Vector3(0, 0.12, 3.39),
-  });
+export default function Content() {
+//   const springs = useSpring({
+//     position: open ? new Vector3(0, 2.66, -0.89) : new Vector3(0, 0.12, 3.39),
+//   });
 
   return (
     <>
