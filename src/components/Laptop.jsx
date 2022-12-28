@@ -1,21 +1,35 @@
 import * as THREE from "three";
 import React, { useEffect, useRef, useState } from "react";
 import { useFrame } from "@react-three/fiber";
-import { useGLTF } from "@react-three/drei";
+import { Html, useGLTF } from "@react-three/drei";
 import { a as three } from "@react-spring/three";
+// import { useControls } from "leva";
 
 export default function Model({ open, hinge, ...props }) {
+  // const { position } = useControls({
+  //   position: {
+  //     value: { x: -2, y: 0, z: 0 },
+  //     label: "Position",
+  //     step: 0.01,
+  //   },
+  // });
+
+  // const { rotationX } = useControls({
+  //   rotationX: {
+  //     value: 0,
+  //     label: "Rotation X",
+  //     step: 0.001,
+  //   },
+  // });
+
   const group = useRef();
   // Load model
   const { nodes, materials } = useGLTF("/mac-draco.glb");
   // Take care of cursor state on hover
   const [hovered, setHovered] = useState(false);
   useEffect(
-    () => void (document.body.style.cursor = hovered ? "pointer" : "auto")
-    
-    ,
+    () => void (document.body.style.cursor = hovered ? "pointer" : "auto"),
     [hovered]
-    
   );
   // Make it float in the air when it's opened
   useFrame((state) => {
@@ -88,6 +102,20 @@ export default function Model({ open, hinge, ...props }) {
         geometry={nodes.touchbar.geometry}
         position={[0, -0.03, 1.2]}
       />
+
+      <Html
+        transform
+        occlude
+        distanceFactor={3}
+        position={[0, 2.66, -0.89]}
+        rotation-x={-0.43}
+      >
+        <iframe
+          className="h-[750px] w-[1130px] rounded-2xl border-none bg-black"
+          src="https://folio2023-gabrielpedroza.vercel.app/static"
+          backface-visibility="hidden"
+        />
+      </Html>
     </group>
   );
 }

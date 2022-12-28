@@ -9,6 +9,7 @@ import {
 import { Suspense, useState } from "react";
 import Model from "../components/Laptop";
 import { Canvas } from "@react-three/fiber";
+import Development from "./Development";
 
 export default function Experience() {
   const [open, setOpen] = useState(false);
@@ -17,8 +18,8 @@ export default function Experience() {
 
   return (
     <>
+      <Canvas shadows camera={{ position: [0, 17, -23], fov: 30 }}>
       {/* <Development /> */}
-      <Canvas shadows camera={{ position: [0, 3, -23], fov: 30 }}>
         <Sky />
         <Suspense fallback={null}>
           <group

@@ -2,7 +2,7 @@ import React from "react";
 
 const StaticSite = () => {
   return (
-    <div>
+    <div className="h-full w-full bg-gradient-to-tr from-yellow-200 via-pink-200 to-pink-400">
       <MainContent />
     </div>
   );
@@ -10,7 +10,7 @@ const StaticSite = () => {
 
 const MainContent = () => (
   <main className="container mx-auto py-10">
-    <h1 className="mb-5 text-3xl font-bold">Gabriel Pedroza</h1>
+    <h1 className="mb-5 text-6xl font-bold">Gabriel Pedroza</h1>
     <p className="mb-8 text-gray-700">
       FullStack Software Engineer
     </p>
