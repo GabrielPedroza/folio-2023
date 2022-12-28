@@ -4,7 +4,6 @@ import {
   Environment,
   PresentationControls,
   Cloud,
-  Sky
 } from "@react-three/drei";
 import { Suspense, useState } from "react";
 import Model from "../components/Laptop";
@@ -19,14 +18,13 @@ export default function Experience() {
   return (
     <>
       <Canvas shadows camera={{ position: [0, 12, -22], fov: 30 }}>
-      {/* <Development /> */}
-        <Sky />
+        <color attach="background" args={["lightblue"]} />
+        {/* <Development /> */}
+        {/* <Sky sunPosition={[200, 1500, 200]}/> */}
         <Suspense fallback={null}>
           <group
             rotation={[0, Math.PI, 0]}
-            onClick={(e) => (
-              e.stopPropagation(), setOpen(true)
-            )}
+            onClick={(e) => (e.stopPropagation(), setOpen(true))}
           >
             <Cloud depth={1.5} />
             <PresentationControls
@@ -44,6 +42,12 @@ export default function Experience() {
               />
             </PresentationControls>
           </group>
+          <Suspense fallback={null}>
+            <Cloud position={[-4, -2, 15]} speed={0.5} opacity={1} />
+            <Cloud position={[7, -4, 20]} speed={0.4} opacity={0.5} /> 
+            <Cloud position={[-14, -10, 22]} speed={0.3} opacity={0.75} />
+            <Cloud position={[14, -4, 14]} speed={0.3} opacity={1} />
+          </Suspense>
           <Environment preset="city" />
         </Suspense>
         <ContactShadows
