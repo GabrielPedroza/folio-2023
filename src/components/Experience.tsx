@@ -7,7 +7,6 @@ import {
   Sky
 } from "@react-three/drei";
 import { Suspense, useState } from "react";
-import Development from "../components/Development";
 import Model from "../components/Laptop";
 import { softShadows } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
@@ -35,7 +34,7 @@ export default function Experience() {
           <group
             rotation={[0, Math.PI, 0]}
             onClick={(e) => (
-              e.stopPropagation(), setOpen((open) => (open = true))
+              e.stopPropagation(), setOpen(true)
             )}
           >
             <Cloud depth={1.5} />

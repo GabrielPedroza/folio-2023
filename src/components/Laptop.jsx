@@ -48,7 +48,7 @@ export default function Model({ open, hinge, ...props }) {
       ref={group}
       {...props}
       onPointerOver={(e) => (e.stopPropagation(), setHovered(true))}
-      onPointerOut={(e) => setHovered(false)}
+      onPointerOut={() => setHovered(false)}
       dispose={null}
       castShadow
     >
