@@ -18,7 +18,7 @@ export default function Experience() {
 
   return (
     <>
-      <Canvas shadows camera={{ position: [0, 17, -23], fov: 30 }}>
+      <Canvas shadows camera={{ position: [0, 12, -22], fov: 30 }}>
       {/* <Development /> */}
         <Sky />
         <Suspense fallback={null}>

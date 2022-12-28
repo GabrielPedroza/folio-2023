@@ -113,7 +113,6 @@ export default function Model({ open, hinge, ...props }) {
         <iframe
           className="h-[750px] w-[1130px] rounded-2xl border-none bg-black"
           src="https://folio2023-gabrielpedroza.vercel.app/static"
-          backface-visibility="hidden"
         />
       </Html>
     </group>
