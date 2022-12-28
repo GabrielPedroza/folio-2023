@@ -8,23 +8,13 @@ import {
 } from "@react-three/drei";
 import { Suspense, useState } from "react";
 import Model from "../components/Laptop";
-import { softShadows } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-
-softShadows({
-  frustum: 3.75,
-  size: 0.005,
-  near: 9.5,
-  samples: 17,
-  rings: 11,
-});
 
 export default function Experience() {
   const [open, setOpen] = useState(false);
   // We turn this into a spring animation that interpolates between 0 and 1
   const props = useSpring({ open: Number(open) });
 
-  // const backgroundColor = props.open.to([0, 1], ["#blue", "#whitesmoke"]);
   return (
     <>
       {/* <Development /> */}
