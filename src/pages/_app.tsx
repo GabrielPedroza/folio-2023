@@ -13,9 +13,8 @@ const MyApp: AppType<{ session: Session | null }> = ({
 }) => {
   return (
     <SessionProvider session={session}>
-      <Canvas shadows camera={{ position: [0, 3, -23], fov: 30 }}>
+      
         <Component {...pageProps} />
-      </Canvas>
     </SessionProvider>
   );
 };
