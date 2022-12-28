@@ -20,13 +20,11 @@ export default function Experience() {
       <Canvas shadows camera={{ position: [0, 12, -22], fov: 30 }}>
         <color attach="background" args={["lightblue"]} />
         {/* <Development /> */}
-        {/* <Sky sunPosition={[200, 1500, 200]}/> */}
         <Suspense fallback={null}>
           <group
             rotation={[0, Math.PI, 0]}
             onClick={(e) => (e.stopPropagation(), setOpen(true))}
           >
-            <Cloud depth={1.5} />
             <PresentationControls
               enabled={open ? true : false}
               global
@@ -50,6 +48,7 @@ export default function Experience() {
             <Cloud position={[25, -30, 34]} speed={0.4} opacity={1} />
           </Suspense>
           <Environment preset="city" />
+          <ambientLight intensity={1} />
         </Suspense>
         <ContactShadows
           position={[0, -3.5, 0]}
