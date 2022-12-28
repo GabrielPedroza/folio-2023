@@ -1,9 +1,10 @@
 import * as THREE from "three";
 import React, { useEffect, useRef, useState } from "react";
 import { useFrame } from "@react-three/fiber";
-import { Html, useGLTF } from "@react-three/drei";
-import { a as three } from "@react-spring/three";
-// import { useControls } from "leva";
+import { useGLTF } from "@react-three/drei";
+import { a as three, useSpring } from "@react-spring/three";
+import { useControls } from "leva";
+import Content from "./Content";
 
 export default function Model({ open, hinge, ...props }) {
   // const { position } = useControls({
@@ -21,6 +22,8 @@ export default function Model({ open, hinge, ...props }) {
   //     step: 0.001,
   //   },
   // });
+
+  const propsFrame = useSpring({ open: Number(open) });
 
   const group = useRef();
   // Load model
@@ -102,19 +105,17 @@ export default function Model({ open, hinge, ...props }) {
         geometry={nodes.touchbar.geometry}
         position={[0, -0.03, 1.2]}
       />
-
-      <Html
-        transform
-        occlude
-        distanceFactor={3}
-        position={[0, 2.66, -0.89]}
-        rotation-x={-0.43}
-      >
-        <iframe
-          className="h-[750px] w-[1130px] rounded-2xl border-none bg-black"
-          src="https://folio2023-gabrielpedroza.vercel.app/static"
-        />
-      </Html>
+      <Content open={open} />
     </group>
   );
 }
+
+/**
+ * position={[0, 2.66, -0.89]}
+ * rotation-x={-0.43}
+ *
+ * position={open ? [0, 2.66, -0.89] : [0, 0.12, 3.39]}
+ * rotation-x={open ? -0.43 : 1.57}
+ *
+ * propsFrame.open.to([0, 1], [[0, 0.12, 3.39], [0, 2.66, -0.89]])
+ */
