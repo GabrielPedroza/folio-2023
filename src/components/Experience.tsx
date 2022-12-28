@@ -43,10 +43,11 @@ export default function Experience() {
             </PresentationControls>
           </group>
           <Suspense fallback={null}>
-            <Cloud position={[-4, -2, 15]} speed={0.5} opacity={1} />
+            <Cloud position={[-4, -2, 25]} speed={0.4} opacity={1} />
             <Cloud position={[7, -4, 20]} speed={0.4} opacity={0.5} /> 
             <Cloud position={[-14, -10, 22]} speed={0.3} opacity={0.75} />
-            <Cloud position={[14, -4, 14]} speed={0.3} opacity={1} />
+            <Cloud position={[14, -4, 24]} speed={0.3} opacity={1} />
+            <Cloud position={[25, -30, 34]} speed={0.4} opacity={1} />
           </Suspense>
           <Environment preset="city" />
         </Suspense>
