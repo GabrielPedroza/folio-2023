@@ -15,7 +15,6 @@ export default function Content() {
         distanceFactor={3}
         position={[0, 2.66, -0.89]}
         rotation-x={-0.43}
-
       >
         <iframe
           className="h-[750px] w-[1130px] rounded-2xl border-none bg-black"
