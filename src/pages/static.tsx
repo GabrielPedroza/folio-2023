@@ -17,16 +17,19 @@ const AboutMe = () => {
     <div className="rounded-m -mx-5 mb-10 mt-[11rem] p-5">
       <h2 className="mb-5 text-center text-4xl font-bold">About Me</h2>
       <p className="mb-5 w-[45ch] text-lg leading-loose">
-        Hey, I&apos;m Gabe, a Software Engineer based in 🏝️ Miami! I initally
-        started my career as a <b>3D Frontend Engineer</b> and have since
-        pivoted to being a <b>Fullstack Engineer</b> with a focus in React and
-        TypeScript. I am completely <b>self-taught</b> and currently majoring in
-        Computer Science at <i>Florida International University</i>. I am very
-        involved in my university. I am a former <b>Web Dev Lead</b> that led 15
-        engineers to create a Fullstack Web Application in 9 weeks. I am also a
-        former <b>committee</b> member for the CS Club with a focus on helping
-        students fix their resumes and prepare for interviews. Feel free to
-        connect to me! My links are below :)
+        Hi, I&apos;m Gabe, a Software Engineer from Miami 🏝️. I am a CS major at{" "}
+        <a href="https://www.fiu.edu/">Florida International University</a> and
+        serve as <b>Executive Board</b> and <b>Web Development Lead</b> for{" "}
+        <b>INIT</b>, a non-profit organization with over <i>7600+</i> active
+        members aimed at helping minorities secure tech industry jobs. With
+        expertise in React and TypeScript, I have a proven track record as a{" "}
+        <b>FullStack Software Engineer</b>, including experience as a Web
+        Development Lead and Project Manager where I led a team of{" "}
+        <i>15 engineers</i>
+        to deliver a Fullstack Web Application in just 9 weeks. Additionally, I
+        have served as a committee member for the CS Club, assisting students
+        with resume preparation and interview skills. If you&apos;d like to
+        connect, please see my links below :)
       </p>
     </div>
   );
@@ -92,9 +95,11 @@ const SocialLinks = () => {
 };
 
 const MainContent = () => (
-  <main className="container mx-auto flex justify-between self-center py-10 ml-15">
+  <main className="ml-15 container mx-auto flex justify-between self-center py-10">
     <div>
-      <h1 className="mb-5 text-7xl font-bold whitespace-nowrap">Gabriel Pedroza</h1>
+      <h1 className="mb-5 whitespace-nowrap text-7xl font-bold">
+        Gabriel Pedroza
+      </h1>
       <p className="mb-[4rem] text-4xl text-gray-700">
         Fullstack Software Engineer
       </p>
